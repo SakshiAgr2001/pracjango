@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title> Register</title>
+{% endblock  %}
+
+{% block content %}
+<div class = "container">
+
+    <fieldset>
+    <form method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+        <br>
+        USERNAME : <input type = "text" name = "name" id = "name"><br><br>
+        Email : <input type = "text" name = "email" id = "email"><br><br>
+        Gender : <select name = "gender" id = "gender">
+            <option value = "Male">Male</option>
+            <option value = "Female">Female</option>
+            <option value = "Other">Other</option>
+        </select><br><br>
+        <h5>Work Type : </h5><br>
+        Part-time : <input type = "radio" name = "worktype" id = "worktype" value="Part-Time"><br>
+        Full-time : <input type = "radio" name = "worktype" id = "worktype" value="Full-Time"><br><br>
+        <h5> Skills </h5> <br>
+        Java : <input type = "checkbox" name = "skills" id = "java" value="java"><br>
+        Python : <input type = "checkbox" name = "skills" id = "python" value="python"><br>
+        Nothing : <input type = "checkbox" name = "skills" id = "nothing" value="nothing"><br><br>
+
+        Upload File : <input type="file" name="profilepic" id="profilepic"><br><br>
+
+
+    
+        <input type = "submit" value="Register">
+    
+     
+    </form> 
+    </fieldset>
+    
+
+</div>
+
+
+
+
+
+{% endblock %}
